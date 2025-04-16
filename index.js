@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';  // Use `import` instead of `require`
 
 async function checkIn() {
   console.log('Starting the check-in process...');
@@ -26,4 +26,5 @@ async function checkIn() {
 }
 
 checkIn();
+
 
