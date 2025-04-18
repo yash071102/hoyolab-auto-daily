@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Install Dependencies
+        run: npm install
+
       - name: Check In
         run: node index.js
         env:
@@ -24,6 +27,7 @@ jobs:
           GAMES: ${{ vars.GAMES }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_USER: ${{ secrets.DISCORD_USER }}
+
   workflow-keepalive:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
